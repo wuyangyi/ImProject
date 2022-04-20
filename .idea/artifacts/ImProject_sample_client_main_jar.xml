@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ImProject.sample_client.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ImProject_sample_client_main_jar</output-path>
+    <root id="archive" name="ImProject.sample_client.main.jar">
+      <element id="module-output" name="ImProject.sample_client.main" />
+      <element id="module-output" name="ImProject.sample-foo.main" />
+      <element id="module-output" name="ImProject.lib-clink.main" />
+    </root>
+  </artifact>
+</component>

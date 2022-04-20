@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--数据库连接驱动-->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!--连接地址用户名密码 127.0.0.1  8.136.105.254-->
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/hubang?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">199755</property>
+
+        <!--JDBC 连接池大小-->
+        <property name="connection.pool_size">5</property>
+
+        <property name="hibernate.format_sql">true</property>   <!-- 将SQL脚本进行格式化后再输出 -->
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property><!-- 排除掉数据库可能不支持的功能 -->
+        <!--sql 方言-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!--hibernate session 上下文为线程级别-->
+        <property name="current_session_context_class">thread</property>
+        <!--配置c3p0缓存连接池-->
+        <property name="cache.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+        <!--连接池的最小数目-->
+        <property name="c3p0.min_size">6</property>
+        <!--连接池的最大数目-->
+        <property name="c3p0.max_size">50</property>
+        <!--设置数据库连接的超时时间-->
+        <property name="c3p0.timeout">100</property>
+        <!--可以被缓存的preparedstatment的最大数目-->
+        <property name="c3p0.max_statement">50</property>
+        <!--当连接池里面的连接用完时，c3p0一下获取的新连接数目-->
+        <property name="c3p0.acquire_increment">1</property>
+        <!--连接对象应该多长时间被自动校验的时间段，以秒为单位-->
+        <property name="c3p0.idle_test_period">100</property>
+        <!--最多可以创建Statements对象的个数 就是可以执行SQL语句的对象个数-->
+        <property name="c3p0.max_statements">0</property>
+
+
+        <!--connection.characterEncoding连接数据库时数据的传输字符集编码方式， -->
+        <property name="connection.characterEncoding">utf-8</property>
+        <property name="cache.use_second_level_cache">false</property>
+
+        <!--sql语句输出-->
+        <property name="show_sql">true</property>
+        <!--自动更新数据的级别-->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <!--
+        create:表示启动的时候先drop，在create
+        create-drop:也表示创建，只不过系统关闭前执行以下drop
+        update:这个操作启动的时候回去检查schema是否一致，如果不一致会做scheme更新
+        validate:启动时验证现有schema与你配置的hibernate是否一致，如果不一致就抛出异常，并不做更新(一般用作发布后的)
+        -->
+
+    </session-factory>
+</hibernate-configuration>

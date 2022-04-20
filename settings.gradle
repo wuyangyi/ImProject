@@ -1,0 +1,6 @@
+rootProject.name = 'ImProject'
+include 'lib-clink'
+include 'sample-foo'
+include 'sample_client'
+include 'sample-server'
+
